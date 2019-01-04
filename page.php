@@ -1,45 +1,40 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package IAESTE_CER_Summer_App
+ */
 
-	<main role="main">
-		<!-- section -->
-		<section>
+get_header();
+?>
 
-			<h1><?php the_title(); ?></h1>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			get_template_part( 'template-parts/content', 'page' );
 
-				<?php the_content(); ?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+		endwhile; // End of the loop.
+		?>
 
-				<br class="clear">
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
