@@ -1,0 +1,13 @@
+{
+    "name": "iaeste-cer/summer-app-theme",
+    "type": "wordpress-theme",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Phil Zoechner",
+            "email": "philipp.zoechner@iaeste.at"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
