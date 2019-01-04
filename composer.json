@@ -2,7 +2,7 @@
     "name": "pzoechner/iaeste-cer-summer-app-theme",
     "type": "wordpress-theme",
     "version": "0.1",
-    "license": "GPL-3.0-only",
+    "license": "GPL-2.0-only",
     "authors": [
         {
             "name": "Phil Zoechner",
