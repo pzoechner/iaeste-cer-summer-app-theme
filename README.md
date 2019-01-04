@@ -1,5 +1,5 @@
 # IAESTE CER Summer App Theme
-The WordPress theme for [IAESTE CER Summer App](https://github.com/pzoechner/iaeste-cer-summer-app/). Its foundation is a copy of [HTML5 Blank](README-HTML5-BLANK.md).
+The WordPress theme for [IAESTE CER Summer App](https://github.com/pzoechner/iaeste-cer-summer-app/). Its foundation is a copy of [HTML5 Blank v1.4.3](README-HTML5-BLANK.md).
 
 ## Installation
 You can clone this repository into your themes folder if needed.
