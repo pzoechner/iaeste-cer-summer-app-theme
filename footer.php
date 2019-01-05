@@ -26,7 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="site-info">
+					<div class="site-info text-center">
 
 						c2019 | IAESTE CER
 						<?php //understrap_site_info(); ?>
