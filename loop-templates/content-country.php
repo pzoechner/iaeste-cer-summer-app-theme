@@ -16,12 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
-
 	</header><!-- .entry-header -->
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
@@ -31,9 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 
+		<br><br><br>
 		<?php //echo var_dump(get_field('country')); ?>
 		Flag: <img style="height: 150px;" src="<?= get_field('country_flag') ?>">
-		<br>
+		<br><br><br>
 
 
 		<?php

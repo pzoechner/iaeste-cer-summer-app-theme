@@ -16,12 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
-
 	</header><!-- .entry-header -->
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
@@ -31,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 
+		<br><br><br>
 		<?php
 			// 		echo var_dump(get_field(''));
 			// 		echo var_dump(get_field('country')[0]);
@@ -39,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			echo 'Location: ' . get_field('location') . '<br>';
 			$countryId = get_field('country')[0]->ID;
 		?>
+		<br><br><br>
 
 
 		<?php
