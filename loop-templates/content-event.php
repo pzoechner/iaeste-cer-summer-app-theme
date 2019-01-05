@@ -25,16 +25,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 
-		<br><br><br>
-		<?php
-			// 		echo var_dump(get_field(''));
-			// 		echo var_dump(get_field('country')[0]);
-			// 		echo "<br><br>";
-			echo 'Country: <a href="' . get_field('country')[0]->guid . '">' . get_field('country')[0]->post_title . '</a><br>';
-			echo 'Location: ' . get_field('location') . '<br>';
-			$countryId = get_field('country')[0]->ID;
-		?>
-		<br><br><br>
+		<!-- PLAY GROUND --><br><br><br>
+		
+		<?php $country = get_field('country'); ?>
+		Country: <a href="<?= get_permalink($country->ID); ?>"><?= $country->post_title; ?></a>
+		<br>
+		Location: <?= the_field('location') . '<br>'; ?>
+
+		<br><br><br><!-- /PLAY GROUND -->
 
 
 		<?php

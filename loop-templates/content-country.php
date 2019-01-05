@@ -25,10 +25,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 
-		<br><br><br>
+		<!-- PLAY GROUND --><br><br><br>
+		
 		<?php //echo var_dump(get_field('country')); ?>
 		Flag: <img style="height: 150px;" src="<?= get_field('country_flag') ?>">
-		<br><br><br>
+		
+		<br><br><br><!-- /PLAY GROUND -->
 
 
 		<?php
