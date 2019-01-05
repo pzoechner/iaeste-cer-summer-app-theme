@@ -1,40 +1,58 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
+ * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package IAESTE_CER_Summer_App
+ * @package understrap
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 get_header();
+
+$container = get_theme_mod( 'understrap_container_type' );
+
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div class="wrapper" id="page-wrapper">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-			get_template_part( 'template-parts/content', 'page' );
+		<div class="row">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			<!-- Do the left sidebar check -->
+			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
-		endwhile; // End of the loop.
-		?>
+			<main class="site-main" id="main">
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				<?php while ( have_posts() ) : the_post(); ?>
 
-<?php
-get_sidebar();
-get_footer();
+					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+					?>
+
+				<?php endwhile; // end of the loop. ?>
+
+			</main><!-- #main -->
+
+			<!-- Do the right sidebar check -->
+			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+
+		</div><!-- .row -->
+
+	</div><!-- #content -->
+
+</div><!-- #page-wrapper -->
+
+<?php get_footer(); ?>
