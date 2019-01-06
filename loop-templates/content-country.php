@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'post_type' => 'event',
 				'meta_query' => array(
 					array(
-						'key' => 'country', // name of custom field
+						'key' => 'country',
 						'value' => get_the_ID(),
 						'compare' => '='
 					)
