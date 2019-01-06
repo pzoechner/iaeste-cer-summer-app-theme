@@ -15,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<header class="entry-header">
 
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<a href="<?php echo get_the_permalink( get_field('id') ); ?>">
+			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		</a>
 
 	</header><!-- .entry-header -->
 

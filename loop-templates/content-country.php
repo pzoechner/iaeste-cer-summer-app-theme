@@ -26,11 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 
-		<!-- PLAY GROUND --><br><br><br>
+		<!-- PLAY GROUND -->
 		
 		<?php //echo var_dump(get_field('country')); ?>
-		Flag: <img style="height: 150px;" src="<?= get_field('country_flag') ?>">
-				
+		<img style="width: 100px;" src="<?= get_field('country_flag') ?>">
+
 		<?php
 			$events = get_posts(array(
 				'post_type' => 'event',
@@ -56,6 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endforeach; ?>
 			</ul>
 		<?php endif; ?>
+		
 		<br><br><br><!-- /PLAY GROUND -->
 
 
