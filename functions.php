@@ -33,3 +33,16 @@ foreach ( $understrap_includes as $file ) {
 	}
 	require_once $filepath;
 }
+
+/**
+ * from: https://wordpress.stackexchange.com/a/39818
+ */
+// BEGIN
+add_action( 'pre_get_posts', 'my_change_sort_order_of_country_archive'); 
+function my_change_sort_order_of_country_archive($query){
+    if( is_archive() && is_post_type_archive('country') ):
+       $query->set( 'order', 'ASC' );
+       $query->set( 'orderby', 'title' );
+    endif;    
+};
+// END
