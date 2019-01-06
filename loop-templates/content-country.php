@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
+
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -29,23 +30,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<?php //echo var_dump(get_field('country')); ?>
 		Flag: <img style="height: 150px;" src="<?= get_field('country_flag') ?>">
-		
-		<br><br>
-		
-		Events in this country:
+				
 		<?php
-		$events = get_posts(array(
-							'post_type' => 'event',
-							'meta_query' => array(
-								array(
-									'key' => 'country', // name of custom field
-									'value' => get_the_ID(),
-									'compare' => '='
-								)
-							)
-						));
+			$events = get_posts(array(
+				'post_type' => 'event',
+				'meta_query' => array(
+					array(
+						'key' => 'country', // name of custom field
+						'value' => get_the_ID(),
+						'compare' => '='
+					)
+				)
+			));
 		?>
 		<?php if( $events ): ?>
+			<br><br>
+			Events in this country:
 			<ul>
 			<?php foreach( $events as $event ): ?>
 				<li>
