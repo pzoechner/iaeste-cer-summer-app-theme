@@ -30,6 +30,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php //echo var_dump(get_field('country')); ?>
 		Flag: <img style="height: 150px;" src="<?= get_field('country_flag') ?>">
 		
+		<br><br>
+		
+		Events in this country:
+		<?php
+		$events = get_posts(array(
+							'post_type' => 'event',
+							'meta_query' => array(
+								array(
+									'key' => 'country', // name of custom field
+									'value' => get_the_ID(),
+									'compare' => '='
+								)
+							)
+						));
+		?>
+		<?php if( $events ): ?>
+			<ul>
+			<?php foreach( $events as $event ): ?>
+				<li>
+					<a href="<?php echo get_permalink( $event->ID ); ?>">
+						<?php echo get_the_title( $event->ID ); ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 		<br><br><br><!-- /PLAY GROUND -->
 
 
