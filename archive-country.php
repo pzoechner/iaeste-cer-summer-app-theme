@@ -31,7 +31,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<header class="page-header">
 						<?php
-						the_archive_title( '<h1 class="page-title mb-4">', '</h1>' );
+						// the_archive_title( '<h1 class="page-title mb-4">', '</h1>' );
+						echo ( '<h1 class="page-title mb-4">Countries</h1>' );
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
