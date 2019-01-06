@@ -15,22 +15,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php //echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
 
-	<div class="entry-content">
+	<div class="entry-content flex">
 
 		<?php the_content(); ?>
 
 
-		<!-- PLAY GROUND --><br><br><br>
-		
+		<!-- PLAY GROUND -->
+
 		<?php //echo var_dump(get_field('country')); ?>
-		Flag: <img style="height: 150px;" src="<?= get_field('country_flag') ?>">
-		
+		<img style="width: 100px;" src="<?= get_field('country_flag') ?>">
+
 		<br><br><br><!-- /PLAY GROUND -->
 
 
