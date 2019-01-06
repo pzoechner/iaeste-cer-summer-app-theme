@@ -16,3 +16,7 @@ See the [UnderStrap CSS and Sass Guide](https://github.com/pzoechner/iaeste-cer-
 
 Head over to [Plugins.md of IAESTE CER Summer App](https://github.com/pzoechner/iaeste-cer-summer-app/blob/master/PLUGINS.md) to get an overview of used plugins and information on how to access variables in this template.
 
+## Links
+
+* [UnderStrap](https://understrap.com/)
+* [Bootstrap 4.2](https://getbootstrap.com/docs/4.2/getting-started/introduction/)
