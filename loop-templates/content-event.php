@@ -25,14 +25,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php the_content(); ?>
 
 
-		<!-- PLAY GROUND --><br><br><br>
+		<!-- PLAY GROUND -->
 		
-		<?php $country = get_field('country'); ?>
-		Country: <a href="<?= get_permalink($country->ID); ?>"><?= $country->post_title; ?></a>
-		<br>
-		Location: <?= the_field('location') . '<br>'; ?>
+		<div class="my-4">
+			<p class="display-4">
+				<a href="<?= get_field('event_website') ?>" target="_blank">
+					Event Homepage
+				</a>
+			</p>
+		</div>
 
-		<br><br><br><!-- /PLAY GROUND -->
+		<div class="my-4">
+			<h3 class="text-muted">Takes place in</h3>
+			<p class="display-4">
+				<a href="<?= get_permalink(get_field('country')); ?>">
+					<?= get_field('country')->post_title; ?>
+				</a>
+			</p>
+		</div>
+
+		<div class="my-4">
+			<h3 class="text-muted">Location</h3>
+			<p class="display-4"><?= get_field('location') ?></p>
+		</div>
+
+		<div class="my-4">
+			<h3 class="text-muted">Dates</h3>
+			<p class="display-4"><?= date('d.m.', strtotime(get_field('event_from'))) ?> - <?= date('d.m.Y', strtotime(get_field('event_to'))) ?></p>
+		</div>
+
+		<!-- /PLAY GROUND -->
 
 
 		<?php
