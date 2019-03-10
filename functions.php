@@ -35,6 +35,7 @@ foreach ( $understrap_includes as $file ) {
 }
 
 /**
+ * author: Phil Zoechner
  * from: https://wordpress.stackexchange.com/a/39818
  */
 // BEGIN
@@ -45,4 +46,44 @@ function my_change_sort_order_of_country_archive($query){
        $query->set( 'orderby', 'title' );
     endif;    
 };
+// END
+
+/**
+ * Shortcode to display upcoming events on front page
+ * TODO: limit query to upcoming events only
+ * 
+ * author: Phil Zoechner
+ * from: https://wordpress.stackexchange.com/a/242641
+ */
+// BEGIN
+function wpse_event_upcoming_posts() {
+    $out = '';
+
+    $args = array( 
+        'numberposts' => '10', 
+        'post_status' => 'publish', 
+        'post_type' => 'event',
+    );
+
+    $upcoming = wp_get_recent_posts($args);
+
+    if ($upcoming) {
+		$out .= '<h1 class="entry-title m-4">Upcoming Events</h1>';
+        $out .= '<ul class="list-group">';
+
+        foreach ($upcoming as $item) {
+            $out .= '<li class="list-group-item">';
+            $out .= '<a href="' . get_permalink($item['ID']) . '">';
+            $out .= get_the_title($item['ID']); 
+            $out .= '</a></li>';
+        }
+
+        $out .= '</ul>';
+    } else {
+		$out = '<h1 class="entry-title">No upcoming events for now</h1>';
+	}
+
+    return $out;
+}
+add_shortcode( 'upcoming-events', 'wpse_event_upcoming_posts' );
 // END
