@@ -12,15 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-<? /*
-	<header class="entry-header">
+
+	<!-- <header class="entry-header">
 
 		<a href="<?php //echo get_the_permalink( get_field('id') ); ?>">
 			<?php //the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 		</a>
 
-	</header><!-- .entry-header -->
-*/ ?>
+	</header> -->
+	<!-- .entry-header -->
+
 
 	<?php //echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
 
