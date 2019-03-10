@@ -12,14 +12,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-
+<? /*
 	<header class="entry-header">
 
-		<a href="<?php echo get_the_permalink( get_field('id') ); ?>">
-			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<a href="<?php //echo get_the_permalink( get_field('id') ); ?>">
+			<?php //the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 		</a>
 
 	</header><!-- .entry-header -->
+*/ ?>
 
 	<?php //echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
 
@@ -31,10 +32,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- PLAY GROUND -->
 
 		<?php //echo var_dump(get_field('country')); ?>
-		<img style="width: 100px;" src="<?= get_field('country_flag') ?>">
 
-		<br><br><br><!-- /PLAY GROUND -->
+		<a href="<?php echo get_the_permalink( get_field('id') ); ?>">
+		<div class="card" style="width: 18rem;">
+			<img src="<?= get_field('country_flag') ?>" class="card-img-top" alt="<?= get_field('name_english') ?> Flag">
+			<div class="card-body">
+				<p class="card-text"><?php the_title( '<h2 class="entry-title">', '</h2>' ); ?></p>
+			</div>
+		</div>
+		</a>
 
+		<br>
+		<!-- /PLAY GROUND -->
 
 		<?php
 		wp_link_pages(
